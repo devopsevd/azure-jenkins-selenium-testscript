@@ -21,14 +21,14 @@ public class GoogleStartPageTest {
 	@Before
 	public void setUp() throws MalformedURLException {
 		String serverUrl = System.getProperty("grid.server.url");
-		String gridServerUrl = "http://seleniumhub:4444/wd/hub";
+		String gridServerUrl = "http://10.1.1.4:4444/wd/hub";
 		if (serverUrl != null) {
 			gridServerUrl = serverUrl;
 		}
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		URL gridUrl = new URL(gridServerUrl);
 		driver = new RemoteWebDriver(gridUrl, capability);
-		driver.get("http://tomcat:10000");
+		driver.get("http://10.1.0.4:10000");
 	}
 
 	@After
